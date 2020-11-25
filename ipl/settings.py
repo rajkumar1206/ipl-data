@@ -95,11 +95,16 @@ WSGI_APPLICATION = 'ipl.wsgi.application'
 
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
+        'ENGINE': 'django.db.backends.postgresql',
+        'NAME': 'd8ss7nb5ugk62c',
+        'HOST': 'ec2-3-220-222-72.compute-1.amazonaws.com',
+        'PORT': 5432,
+        'USER': 'bsgvvndfzrymkx',
+        'PASSWORD': 'a57a2f61cc9956754f2940bf98736f4fb80022c5bc4abd8c97134fbeedd865be'
     }
 }
 
+# postgres://bsgvvndfzrymkx:a57a2f61cc9956754f2940bf98736f4fb80022c5bc4abd8c97134fbeedd865be@ec2-3-220-222-72.compute-1.amazonaws.com:5432/d8ss7nb5ugk62c
 
 # Password validation
 # https://docs.djangoproject.com/en/3.0/ref/settings/#auth-password-validators
