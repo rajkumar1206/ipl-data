@@ -25,7 +25,7 @@ SECRET_KEY = '-yhj*dfp#o!p()y@9-ol79sf0ezkfy-_xe5h3opw(zx4-8z8m9'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['ipl-database.herokuapp.com', 'ipl-database-pro.github.io', '127.0.0.1']
+ALLOWED_HOSTS = ['ipl-data-pro.herokuapp.com', 'ipl-database-pro.github.io', '127.0.0.1']
 
 CORS_ORIGIN_ALLOW_ALL = True
 CORS_ALLOW_CREDENTIALS = True
@@ -67,6 +67,8 @@ MIDDLEWARE = [
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
 ]
+
+STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'
 
 ROOT_URLCONF = 'ipl.urls'
 
@@ -137,3 +139,8 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/3.0/howto/static-files/
 
 STATIC_URL = '/static/'
+STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
+
+STATICFILES_DIRS = (
+    os.path.join(BASE_DIR, 'static'),
+)
